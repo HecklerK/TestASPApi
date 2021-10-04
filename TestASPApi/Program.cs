@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using TestASPApi.Models;
 
 
@@ -14,7 +16,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 string connection = builder.Configuration.GetConnectionString("DefualtConnection");
 builder.Services.AddDbContext<EntityContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 
 
 

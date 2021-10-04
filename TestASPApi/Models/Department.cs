@@ -1,4 +1,6 @@
-﻿namespace TestASPApi.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace TestASPApi.Models
 {
     public class Department
     {

@@ -9,8 +9,13 @@ namespace TestASPApi.Models
 
         public EntityContext(DbContextOptions<EntityContext> options) : base(options)
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
+
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Department>().HasAlternateKey(p => p.Name);
         }
     }
 }
